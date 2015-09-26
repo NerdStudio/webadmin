@@ -1,0 +1,20 @@
+header.Header
+	.Header-sidenav
+		.Header-logo.icon-logos_Logoytexto.margin10
+		include ../Card/template.jade
+		.divider
+		.Nav
+			.Nav-item
+				.iconstyle.icon-user 
+				div.Nav-item-text Ver perfil
+			.Nav-item
+				.iconstyle.icon-cog 
+				div.Nav-item-text Configuración
+			.Nav-item(data-bandeja)
+				.iconstyle.icon-drawer 
+				div.Nav-item-text Bandeja de entrada
+				.notifi 2
+			.Nav-item(data-lastitem)
+				.iconstyle(data-cross).icon-cross
+				div.Nav-item-text Cerrar sesión
+				
