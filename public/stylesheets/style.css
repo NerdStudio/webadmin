@@ -384,6 +384,7 @@ select option["selected"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 .MyCard-photo {
   width: 100px;
@@ -392,7 +393,7 @@ select option["selected"] {
 }
 .MyCard-photo-img {
   background-color: #e0e0e0;
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
 }
 .MyCard-name {
@@ -472,6 +473,18 @@ select option["selected"] {
   color: rgba(39,62,72,0.86);
 }
 @media screen and (max-width: 320px) {
+  .titulo1 {
+    font-size: 1.3rem;
+  }
+  .titulo2 {
+    font-size: 0.9rem;
+  }
+  .titulo3 {
+    font-size: 1.1rem;
+  }
+  .titulo4 {
+    font-size: 0.8rem;
+  }
   main {
     display: flex;
     flex-direction: row;
@@ -484,6 +497,7 @@ select option["selected"] {
   }
   .Header {
     box-shadow: -1px 4px 2px 0px #777;
+    max-height: 420px;
   }
   .Header-sidenav {
     width: 100%;
@@ -491,6 +505,13 @@ select option["selected"] {
   }
   .MyCard {
     margin-top: 0px;
+  }
+  .MyCard-photo {
+    text-align: center;
+  }
+  .MyCard-photo-img {
+    text-align: center;
+    width: 70px;
   }
   .Formpanel {
     items-align: center;
@@ -512,13 +533,24 @@ select option["selected"] {
   }
   .Header {
     box-shadow: -1px 4px 2px 0px #777;
+    max-height: 420px;
   }
   .Header-sidenav {
     padding: 0px;
     width: 100%;
   }
+  .Header-logo {
+    font-size: 4.5rem;
+  }
   .MyCard {
     margin-top: 0px;
+  }
+  .MyCard-photo {
+    text-align: center;
+  }
+  .MyCard-photo-img {
+    text-align: center;
+    width: 70px;
   }
   .Formpanel {
     items-align: center;

@@ -6,13 +6,14 @@ var passport = require('passport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login', { title: 'Login' });
+
 });
 router.get('/index', function(req, res, next) {
   res.render('index', {
         title: 'Index',
         user: req.user
       });
-      
+      console.log(req)
 });
 router.get('/form', function(req, res, next) {
   res.render('form', { title: 'Form' });
@@ -47,6 +48,7 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter',
 // En caso de fallo redirige a otra vista '/login'
 router.get('/auth/facebook/callback', passport.authenticate('facebook',
   { successRedirect: '/index', failureRedirect: '/login' }
+
 ));
 
 module.exports = router;
