@@ -435,7 +435,7 @@ select option["selected"] {
   margin: 30px auto;
   flex-direction: row;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-stretch;
   align-content: space-around;
 }
 .Section-item {

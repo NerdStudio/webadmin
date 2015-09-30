@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "jade": "jade --watch --pretty lib/index.jade lib/form.jade --out ./public",
-    "stylus": "stylus --use nib --watch ./views/styles --out ./public/stylesheets",
+    "stylus": "stylus --use nib --watch ./views/models_jade/styles --out ./public/stylesheets",
     "babel": "babel --watch lib --out-dir public"
   },
   "repository": {
