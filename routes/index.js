@@ -16,7 +16,10 @@ router.get('/index', function(req, res, next) {
       //console.log(req)
 });
 router.get('/form', function(req, res, next) {
-  res.render('form', { title: 'Form' });
+  res.render('form', {
+    title: 'Form',
+    user: req.user
+    });
 });
 
 // router.post('/signup', function(req, res) {
