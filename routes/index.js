@@ -22,14 +22,17 @@ router.get('/form', function(req, res, next) {
     });
 });
 
-// router.post('/signup', function(req, res) {
-//   var webname = req.body.webname;
-//   var propietario = req.body.propietario;
-//   User.addUser(username, propietario, function(err, user){
-//       console.log(username + " " + password);
-//       res.render('form', { title: 'Form' });
-//   });
-// });
+router.post('/addpage', function(req, res) {
+  // var webname = req.body.webname;
+  // var propietario = req.body.propietario;
+  // User.addUser(username, propietario, function(err, user){
+  //    console.log(username + " " + password);
+      res.render('form', {
+        title: 'Form',
+        user: req.user
+        });
+  // });
+});
 
 //Rutas para Social Login ---->
 

@@ -10,7 +10,7 @@ var passport = require('passport'); //PASSPORT
 
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var form  = require('./routes/form');
 
 require('./passport')(passport);
 
@@ -39,9 +39,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Enrutador
+
+
 app.use('/', routes);
+app.use('/form', form);
 //app.use('/daniel', routes);
-app.use('/users', users);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
