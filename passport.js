@@ -100,10 +100,10 @@ module.exports = function(passport) {
 			// Si existe en la Base de Datos, lo devuelve
 			if(!err && user!= null) return done(null, user);
 
-			// Si no existe crea un nuevo objecto usuario
-			//console.log(user)
+			//Si no existe crea un nuevo objecto usuario
+			console.log(user)
 			var user = new User({
-				//provider_id	: profile.id,
+				provider_id	: profile.id,
 				provider		 : profile.provider,
 				name				 : profile.username,
 				photo				: profile._json.avatar_url
