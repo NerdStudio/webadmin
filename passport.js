@@ -5,6 +5,8 @@ var User = db.mongoose.model('User');
 var TwitterStrategy = require('passport-twitter').Strategy;
 // Estrategia de autenticación con Facebook
 var FacebookStrategy = require('passport-facebook').Strategy;
+
+var GitHubStrategy = require('passport-github2').Strategy;
 // Fichero de configuración donde se encuentran las API keys
 // Este archivo no debe subirse a GitHub ya que contiene datos
 // que pueden comprometer la seguridad de la aplicación.
@@ -86,4 +88,33 @@ module.exports = function(passport) {
 		});
 	}));
 
+	passport.use(new GitHubStrategy({
+    clientID: config.github.key,
+    clientSecret: config.github.secret,
+    callbackURL: "/auth/github/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+		//console.log(profile._json)
+		User.findOne({provider_id: profile.id}, function(err, user) {
+			if(err) throw(err);
+			// Si existe en la Base de Datos, lo devuelve
+			if(!err && user!= null) return done(null, user);
+
+			// Si no existe crea un nuevo objecto usuario
+			//console.log(user)
+			var user = new User({
+				//provider_id	: profile.id,
+				provider		 : profile.provider,
+				name				 : profile.username,
+				photo				: profile._json.avatar_url
+			});
+			//...y lo almacena en la base de datos
+			user.save(function(err) {
+				if(err) throw err;
+				done(null, user);
+			});
+			//console.log(user)
+		});
+  }
+));
 };

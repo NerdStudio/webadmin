@@ -13,7 +13,7 @@ router.get('/index', function(req, res, next) {
         title: 'Index',
         user: req.user
       });
-      console.log(req)
+      //console.log(req)
 });
 router.get('/form', function(req, res, next) {
   res.render('form', { title: 'Form' });
@@ -40,6 +40,8 @@ router.get('/auth/twitter', passport.authenticate('twitter'));
 // Ruta para autenticarse con Facebook (enlace de login)
 router.get('/auth/facebook', passport.authenticate('facebook'));
 // Ruta de callback, a la que redirigirá tras autenticarse con Twitter.
+router.get('/auth/github', passport.authenticate('github', { scope: [ 'user:email' ] }));
+
 // En caso de fallo redirige a otra vista '/login'
 router.get('/auth/twitter/callback', passport.authenticate('twitter',
   { successRedirect: '/', failureRedirect: '/login' }
@@ -48,7 +50,13 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter',
 // En caso de fallo redirige a otra vista '/login'
 router.get('/auth/facebook/callback', passport.authenticate('facebook',
   { successRedirect: '/index', failureRedirect: '/login' }
-
 ));
+router.get('/auth/github/callback', passport.authenticate('github',
+  { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/index');
+  }
+  );
 
 module.exports = router;

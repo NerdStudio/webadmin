@@ -224,6 +224,16 @@ th {
   overflow: hidden;
   background-color: #e0e0e0;
 }
+.linknone {
+  text-decoration: none;
+  color: rgba(229,229,229,0.9);
+}
+.linksocial {
+  color: #273e48;
+}
+.loginsocial {
+  text-align: center;
+}
 .styleicon {
   font-size: 4rem;
   text-align: center;
@@ -497,7 +507,7 @@ select option["selected"] {
   }
   .Header {
     box-shadow: -1px 4px 2px 0px #777;
-    max-height: 420px;
+    max-height: 100%;
   }
   .Header-sidenav {
     width: 100%;
@@ -533,7 +543,7 @@ select option["selected"] {
   }
   .Header {
     box-shadow: -1px 4px 2px 0px #777;
-    max-height: 420px;
+    max-height: 100%;
   }
   .Header-sidenav {
     padding: 0px;

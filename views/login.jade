@@ -1,21 +1,18 @@
 extends layout
 
 block content
-    //- include ./Header/template.jade		
+    include ./Header/template.jade
+    //nav Sistema de Administración		
     include ./Section-main/template.jade
-      h1= title
-
-        hr
-        if(user)
-          ul
-            li
-              img(src="#{user.photo}")
-            li Bienvenido #{user.name}
-            li
-              a(href='logout') Salir
-        else
-          ul
-            li
-              a(href='auth/twitter') Login con Twitter
-            li
-              a(href='auth/facebook') Login con Facebook
+      .Section-secciones
+        .Section-item.box.flexbox-colwrp
+          .styleicon.icon-facebook
+          .titulo3.margin10.Font-francois.Fontcolor1.loginsocial 
+            a(href='auth/facebook', class="linknone linksocial") Iniciar con Facebook
+            .Section-secciones
+        .Section-item.box.flexbox-colwrp
+          .styleicon.icon-github
+          .titulo3.margin10.Font-francois.Fontcolor1.loginsocial 
+            a(href='auth/github', class="linknone linksocial") Iniciar con Github      
+        //- .Section-item.box.flexbox-colwrp
+        //-   a(href='auth/facebook') Login con Facebook
