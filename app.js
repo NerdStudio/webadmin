@@ -40,9 +40,9 @@ app.use(passport.session());
 
 //Enrutador
 
-
-app.use('/', routes);
 app.use('/form', form);
+app.use('/', routes);
+//app.use('/form', form);
 //app.use('/daniel', routes);
 //app.use('/users', users);
 
