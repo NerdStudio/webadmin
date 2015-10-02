@@ -3,29 +3,17 @@ section
     .titulo2.Font-alegreya Sistema de Administración de catálogo
   .divider
 .Section-secciones
-  .Section-agregar.box
-    //- .titulo3.margin10.Font-francois.Fontcolor1 Formulario
-    //- .divider
-    //- .Form
-    //-   form(id="agregarweb", method="post", action="/form", class="Form-add")
-    //-     .inputstyle.Fontcolor1
-    //-       label(for="input-nombre", class="lbl") Nombre de la nueva web:
-    //-       input(type="text", id="input-nombre", name="namepage")
-    //-     .inputstyle.Fontcolor1
-    //-       label(for="input-nombre", class="lbl") Nombre del propietario:
-    //-       input(type="text", id="input-propietario", placeholder="", name="propietario")
-    //-     .inputstyle.Fontcolor1
-    //-       label(class="lbl") Categoría:
-    //-       select.box
-    //-         option(selected) Negocios:
-    //-         option Música
-    //-         option Blogs 
-    //-     .inputstyle.Font-openssans.Fontcolor1
-    //-       label(class="lbl") Tipo:
-    //-       select.box
-    //-         option(selected) Estática
-    //-         option Dinamicas
-    //-         option Sistemas
-    //-     .divider
-    //-     .btnstyle.Font-openssans
-    //-       input(type="submit", class="btn", value="Salvar")
+  .box
+    table(class="Table")
+      thead
+        tr
+          th(class="th" data-field='id') Usuario
+          th(class="th" data-field='name') Provedor
+          th(class="th" data-field='price') Foto
+      tbody
+      each user in users
+        tr(class="tr")
+          td(class="td") #{user.name} 
+          td(class="td") #{user.provider} 
+          td(class="td") 
+            img(src="#{user.photo}", class="Table-user-photo")

@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User.js')
+
+var userschema = require('../models/User')
+var db = require('../lib/db');
+var User = db.mongoose.model('User', userschema);
+
 var passport = require('passport');
 
 
@@ -41,10 +45,16 @@ router.post('/form', function(req, res) {
 
 // ---- Rutas para Pages Stored
 router.get('/stored', function(req, res, next) {
-  res.render('stored', {
-    title: 'Stored',
-    user: req.user
-    });
+  User.find({}, function(err, docs){
+    if(err) throw(err)
+    else{
+      res.render('stored', {
+        title: 'Stored',
+        user: req.user,
+        users: docs
+      });
+    }
+  })
 });
 
 //Rutas para Social Login ---->
