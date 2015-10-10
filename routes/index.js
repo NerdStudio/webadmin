@@ -57,6 +57,20 @@ router.get('/stored', function(req, res, next) {
   })
 });
 
+// --- Ruta para Usuarios Administradores
+router.get('/admin-users', function(req, res, next) {
+  User.find({}, function(err, docs){
+    if(err) throw(err)
+    else{
+      res.render('admin-users', {
+        title: 'Stored',
+        user: req.user,
+        users: docs
+      });
+    }
+  })
+});
+
 //Rutas para Social Login ---->
 
 //ruta para desloguear
