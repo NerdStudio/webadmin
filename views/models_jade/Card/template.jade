@@ -1,0 +1,12 @@
+.MyCard
+	.MyCard-photo 
+		if(user)
+			img(src="#{user.photo}", class="MyCard-photo-img")
+		else
+			img(src="/images/cara.png", class="MyCard-photo-img")
+	.MyCard-name
+		if(user)
+			.MyCard--textStyle.borderStyle.titulo1 #{user.name}
+		else
+			.MyCard--textStyle.borderStyle.titulo1 Daniel
+		.MyCard-title.titulo2 Administrador

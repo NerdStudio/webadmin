@@ -1,0 +1,31 @@
+section
+	.titulo1.margin20.Font-francois.FontStylebold.Fontcolor1 Agregar nueva página al catálogo
+		.titulo2.Font-alegreya Sistema de Administración de catálogo
+	.divider
+.Section-secciones
+	.Section-agregar.box.Formpanel
+		.titulo3.margin10.Font-francois.Fontcolor1 Formulario
+		.divider
+		.Form
+			form(id="agregarweb", method="post", action="/form", class="Form-add")
+				.inputstyle.Fontcolor1
+					label(for="input-nombre", class="lbl") Nombre de la nueva web:
+					input(type="text", id="input-nombre", name="namepage")
+				.inputstyle.Fontcolor1
+					label(for="input-nombre", class="lbl") Nombre del propietario:
+					input(type="text", id="input-propietario", placeholder="", name="owner")
+				.inputstyle.Fontcolor1
+					label(class="lbl" name="Category") Categoría:
+					select.box
+						option(selected) Negocios:
+						option Música
+						option Blogs 
+				.inputstyle.Font-openssans.Fontcolor1
+					label(class="lbl" name="type") Tipo:
+					select.box
+						option(selected) Estática
+						option Dinamicas
+						option Sistemas
+				.divider
+				.btnstyle.Font-openssans
+					input(type="submit", class="btn", value="Salvar")

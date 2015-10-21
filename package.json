@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "stylus": "stylus --use nib --watch ./views/models_jade/styles --out ./public/stylesheets"
+
   },
   "repository": {
     "type": "git",

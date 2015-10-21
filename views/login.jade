@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    include ./models_jade/Header/template.jade
+    //nav Sistema de Administración		
+    include ./models_jade/Section-main/template.jade
+      .Section-secciones
+        .Section-item.box.flexbox-colwrp
+          .styleicon.icon-facebook
+          .titulo3.margin10.Font-francois.Fontcolor1.loginsocial 
+            a(href='auth/facebook', class="linknone linksocial") Iniciar con Facebook
+            //.Section-secciones
+        .Section-item.box.flexbox-colwrp
+          .styleicon.icon-github
+          .titulo3.margin10.Font-francois.Fontcolor1.loginsocial 
+            a(href='auth/github', class="linknone linksocial") Iniciar con Github      
+        //- .Section-item.box.flexbox-colwrp
+        //-   a(href='auth/facebook') Login con Facebook
