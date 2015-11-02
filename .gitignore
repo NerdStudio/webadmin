@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 config.js
 
@@ -15,3 +16,22 @@ logs
 results
 
 npm-debug.log
+=======
+node_modules/
+config.js
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+>>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+<<<<<<< HEAD
 var userschema = require('../models/User')
 var db = require('../lib/db');
 var User = db.mongoose.model('User', userschema);
@@ -79,6 +80,16 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+=======
+var passport = require('passport');
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+>>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 // Ruta para autenticarse con Twitter (enlace de login)
 router.get('/auth/twitter', passport.authenticate('twitter'));
 // Ruta para autenticarse con Facebook (enlace de login)
@@ -88,19 +99,36 @@ router.get('/auth/github', passport.authenticate('github', { scope: [ 'user:emai
 
 // En caso de fallo redirige a otra vista '/login'
 router.get('/auth/twitter/callback', passport.authenticate('twitter',
+<<<<<<< HEAD
   { successRedirect: '/', failureRedirect: '/login' }
+=======
+  { successRedirect: '/session', failureRedirect: '/webadmin' }
+>>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 ));
 // Ruta de callback, a la que redirigirá tras autenticarse con Facebook.
 // En caso de fallo redirige a otra vista '/login'
 router.get('/auth/facebook/callback', passport.authenticate('facebook',
+<<<<<<< HEAD
   { successRedirect: '/index', failureRedirect: '/login' }
 ));
 router.get('/auth/github/callback', passport.authenticate('github',
   { failureRedirect: '/login' }),
+=======
+  { successRedirect: '/session', failureRedirect: '/webadmin' }
+));
+router.get('/auth/github/callback', passport.authenticate('github',
+  { successRedirect: '/session', failureRedirect: '/webadmin' }
+));/*,
+>>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/index');
   }
+<<<<<<< HEAD
   );
 
+=======
+);
+*/
+>>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 module.exports = router;
