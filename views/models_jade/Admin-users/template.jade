@@ -1,0 +1,24 @@
+section
+  .titulo1.margin20.Font-francois.FontStylebold.Fontcolor1 Usuarios Administradores
+    .titulo2.Font-alegreya Sistema de Administración de catálogo
+  .divider
+.Section-secciones
+  .box
+    table(class="Table")
+      thead
+        tr
+          th(class="th" data-field='id') Usuario
+          th(class="th" data-field='name') Provedor
+          th(class="th" data-field='price') Foto
+      tbody
+      each user in users
+        tr(class="tr")
+          td(class="td") #{user.name} 
+          if(user.provider == "facebook")
+            td(class="td")
+              div.facebook-label #{user.provider}
+          else
+            td(class="td")
+              div.github-label #{user.provider}
+          td(class="td") 
+            img(src="#{user.photo}", class="Table-user-photo")

@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "stylus": "stylus --use nib --watch ./views/models_jade/styles --out ./public/stylesheets"
-
+    "stylus": "stylus --watch ./views/models_jade/styles --out ./public/stylesheets"
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,14 @@
     "nodemon": "^1.7.3",
     "normalize-styl": "^3.0.3",
     "serve-favicon": "~2.3.0",
-    "stylus": "0.42.3"
+    "stylus": "0.42.3",
+    "passport": "~0.3.0",
+    "passport-facebook": "~2.0.0",
+    "passport-twitter": "~1.0.3",
+    "express-session": "~1.11.3",
+    "passport-github2": "~0.1.9"
+  },
+  "devDependencies": {
+    "stylus": "^0.42.3"
   }
 }

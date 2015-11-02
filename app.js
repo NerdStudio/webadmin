@@ -4,13 +4,22 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var passport = require('passport');
+
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var webadmin = require('./routes/webadmin');
-var session = require('./routes/session');
+var sesion = require('./routes/session');
 var form = require('./routes/form');
+var stored = require('./routes/stored');
+var admins = require('./routes/admin-users');
 
+//var users = require('./routes/users');
+
+require('./passport')(passport);
+
+//var config = require('./config/mongodb-config');
 var app = express();
 
 // view engine setup
@@ -26,12 +35,28 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/webadmin', webadmin);
-app.use('/session', session);
-app.use('/form', form);
 
+// Indicamos que use sesiones, para almacenar el objeto usuario
+// y que lo recuerde aunque abandonemos la página
+app.use(session({ resave: true,
+                  saveUninitialized: true,
+                  secret: 'lollllo' }));
+
+//Inicializa PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use('/', routes);
+app.use('/webadmin', webadmin);
+app.use('/session', sesion);
+app.use('/form', form);
+app.use('/stored', stored);
+app.use('/admin-users', admins);
+
+//app.use('/users', users);
+
+//app.use(config);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -442,6 +442,19 @@ select option["selected"] {
   width: 250px;
   margin: 10px;
 }
+.Table {
+  width: 800px;
+}
+.Table-user-photo {
+  width: 40px;
+  border-radius: 50%;
+}
+.th {
+  text-align: justify;
+}
+.td {
+  margin-top: 10px;
+}
 .Font-playfair {
   font-family: 'Playfair Display' serif;
 }
