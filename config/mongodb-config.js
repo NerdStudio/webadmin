@@ -16,7 +16,7 @@ exports.conectar = function (){
 	
 }
 exports.desconectar = function(){
-	mongoose.disconnect();
+	mongoose.connection.close();
 }
 
 /*

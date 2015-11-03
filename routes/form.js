@@ -1,12 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD
-/* GET users listing. */
-router.get('/form', function(req, res, next) {
-  res.render('form', {
-    title: 'Form',
-=======
+
 
 var dbconfig = require('../config/mongodb-config');
 var web = require('../models/web');
@@ -14,22 +9,18 @@ var web = require('../models/web');
 
 
 router.get('/', function(req, res, next) {
-  res.render('form', {
+  if(req.user){
+    res.render('form', {
     title: 'Form get',
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
     user: req.user
     });
+  }
+  else{
+    res.redirect("/webadmin")
+  }
 });
 
-<<<<<<< HEAD
-router.post('/addpage', function(req, res) {
-  // var webname = req.body.webname;
-  // var propietario = req.body.propietario;
-  // User.addUser(username, propietario, function(err, user){
-  //    console.log(username + " " + password);
-      res.render('form', { title: 'Form' });
-  // });
-=======
+
 router.post('/', function(req, res) {
      var webname = req.body.namepage;
      console.log(webname);
@@ -63,7 +54,6 @@ router.post('/', function(req, res) {
       });
       dbconfig.desconectar();
 
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 });
 
 module.exports = router;

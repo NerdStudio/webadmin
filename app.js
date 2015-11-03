@@ -5,17 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-<<<<<<< HEAD
-
-var passport = require('passport'); //PASSPORT
-
-
-var routes = require('./routes/index');
-var form  = require('./routes/form');
-
-require('./passport')(passport);
-
-=======
 var passport = require('passport');
 
 
@@ -31,7 +20,6 @@ var admins = require('./routes/admin-users');
 require('./passport')(passport);
 
 //var config = require('./config/mongodb-config');
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 var app = express();
 
 // view engine setup
@@ -39,24 +27,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-<<<<<<< HEAD
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-=======
+
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-<<<<<<< HEAD
-app.use(express.static(path.join(__dirname, 'public')));
-
-=======
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 // Indicamos que use sesiones, para almacenar el objeto usuario
 // y que lo recuerde aunque abandonemos la página
 app.use(session({ resave: true,
@@ -67,16 +47,6 @@ app.use(session({ resave: true,
 app.use(passport.initialize());
 app.use(passport.session());
 
-<<<<<<< HEAD
-//Enrutador
-
-app.use('/form', form);
-app.use('/', routes);
-//app.use('/form', form);
-//app.use('/daniel', routes);
-//app.use('/users', users);
-
-=======
 
 app.use('/', routes);
 app.use('/webadmin', webadmin);
@@ -88,7 +58,7 @@ app.use('/admin-users', admins);
 //app.use('/users', users);
 
 //app.use(config);
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -121,8 +91,4 @@ app.use(function(err, req, res, next) {
 });
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 module.exports = app;

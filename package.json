@@ -1,26 +1,17 @@
 {
-<<<<<<< HEAD
-  "name": "authentication",
-=======
   "name": "webadmin",
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-<<<<<<< HEAD
     "jade": "jade --watch --pretty lib/index.jade lib/form.jade --out ./public",
     "stylus": "stylus --use nib --watch ./views/models_jade/styles --out ./public/stylesheets",
     "babel": "babel --watch lib --out-dir public"
-=======
-    "stylus": "stylus --watch ./views/models_jade/styles --out ./public/stylesheets"
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NerdStudio/webadmin.git"
   },
-<<<<<<< HEAD
   "author": "Nerd Studio",
   "license": "ISC",
   "bugs": {
@@ -38,30 +29,13 @@
     "mongoose": "~4.1.8",
     "normalize-styl": "~3.0.3",
     "nib": "~1.1.0",
-=======
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "mongoose": "^4.1.12",
-    "morgan": "~1.6.1",
-    "nodemon": "^1.7.3",
-    "normalize-styl": "^3.0.3",
-    "serve-favicon": "~2.3.0",
-    "stylus": "0.42.3",
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
     "passport": "~0.3.0",
     "passport-facebook": "~2.0.0",
     "passport-twitter": "~1.0.3",
     "express-session": "~1.11.3",
     "passport-github2": "~0.1.9"
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "stylus": "^0.42.3"
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
   }
 }

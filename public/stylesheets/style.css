@@ -442,22 +442,6 @@ select option["selected"] {
   width: 250px;
   margin: 10px;
 }
-<<<<<<< HEAD
-=======
-.Table {
-  width: 800px;
-}
-.Table-user-photo {
-  width: 40px;
-  border-radius: 50%;
-}
-.th {
-  text-align: justify;
-}
-.td {
-  margin-top: 10px;
-}
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
 .Font-playfair {
   font-family: 'Playfair Display' serif;
 }
@@ -584,7 +568,6 @@ select option["selected"] {
     width: 90vw;
   }
 }
-<<<<<<< HEAD
 .Table {
   width: 800px;
 }
@@ -614,5 +597,3 @@ select option["selected"] {
   text-align: center;
   width: 85px;
 }
-=======
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7

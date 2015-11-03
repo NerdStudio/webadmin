@@ -15,17 +15,10 @@ section
         tr(class="tr")
           td(class="td") #{user.name} 
           if(user.provider == "facebook")
-<<<<<<< HEAD
-            td(class="td") 
-              div.facebook-label #{user.provider}
-          else
-            td(class="td") 
-=======
             td(class="td")
               div.facebook-label #{user.provider}
           else
             td(class="td")
->>>>>>> d8d944f683a6c916ab93725f0d0d0296328a79b7
               div.github-label #{user.provider}
           td(class="td") 
             img(src="#{user.photo}", class="Table-user-photo")
